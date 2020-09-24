@@ -14,8 +14,7 @@ namespace IDRTestTask
     {
         public IWebDriver driver;
         public readonly string URL = "http://sfs.gov.ua/";
-        public TestContext TestContext { get; set; }
-
+        public TestContext TestContext;
         [TestInitialize]
         public void SetUp()
         {
@@ -25,10 +24,10 @@ namespace IDRTestTask
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
         }
 
-        public void WaitVisibilityOfElement(long timeToWait, IWebElement element)
+        public void WaitVisibilityOfElement(long timeToWait, By locator)
         {
             WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(timeToWait));
-            wait.Until(ExpectedConditions.VisibilityOfAllElementsLocatedBy((By)element));
+            wait.Until(ExpectedConditions.VisibilityOfAllElementsLocatedBy(locator));
         }
 
         [TestCleanup]
@@ -73,9 +72,7 @@ namespace IDRTestTask
                 return;
             }
 
-            IWebElement radioButton = driver.FindElement(By.XPath("//div[contains(@class, 'search__settings')]/label[1]/input[@checked='checked']"));
-
-            Assert.IsTrue(radioButton.Displayed, "Radio button \"по слову\" is not selected");
+            Assert.IsTrue(driver.FindElement(By.XPath("//div[contains(@class, 'search__settings')]/label[1]/input[@checked='checked']")).Displayed, "Radio button \"по слову\" is not selected");
             Assert.AreEqual(driver.FindElement(By.XPath("//div[contains(@class, 'search__info')]/p/strong")).Text, "«" + value + "»");
             
             string totalCounterMessage = driver.FindElement(By.XPath("//div[contains(@class, 'search__info')]/p[2]")).Text;
@@ -97,7 +94,7 @@ namespace IDRTestTask
 
             foreach (IWebElement element in countersInTable)
             {
-                Int32.TryParse(element.Text, out countInOneLine);
+                int.TryParse(element.Text, out countInOneLine);
                 summ += countInOneLine;
             }
             
