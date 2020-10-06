@@ -14,7 +14,8 @@ namespace IDRTestTask
     {
         public IWebDriver driver;
         public readonly string URL = "http://sfs.gov.ua/";
-        public TestContext TestContext;
+        public TestContext TestContext { get; set; }
+
         [TestInitialize]
         public void SetUp()
         {
@@ -34,11 +35,11 @@ namespace IDRTestTask
         public void CleanUp()
         {
             var takeScreenshot = driver.TakeScreenshot();
-    
+
             if (TestContext.CurrentTestOutcome != UnitTestOutcome.Passed)
             {
                 var filePathToScreenshot = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\Screenshot " + DateTime.Now.ToString().Replace(".", "_").Replace(":", "_") + ".png";
-                takeScreenshot.SaveAsFile(filePathToScreenshot); 
+                takeScreenshot.SaveAsFile(filePathToScreenshot);
 
                 if (File.Exists(filePathToScreenshot))
                 {
@@ -58,6 +59,8 @@ namespace IDRTestTask
         {
             IWebElement searchField = driver.FindElement(By.XPath("//input[contains(@placeholder, 'Пошук')]"));
             searchField.Click();
+
+            
 
             searchField.SendKeys(value);
 
