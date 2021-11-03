@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\IT project\\Repos\\IDRTestTask.csproj": {}
+    "E:\\IT project\\IDRRep\\IDRTestTask.csproj": {}
   },
   "projects": {
-    "E:\\IT project\\Repos\\IDRTestTask.csproj": {
+    "E:\\IT project\\IDRRep\\IDRTestTask.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\IT project\\Repos\\IDRTestTask.csproj",
+        "projectUniqueName": "E:\\IT project\\IDRRep\\IDRTestTask.csproj",
         "projectName": "IDRTestTask",
-        "projectPath": "E:\\IT project\\Repos\\IDRTestTask.csproj",
+        "projectPath": "E:\\IT project\\IDRRep\\IDRTestTask.csproj",
         "packagesPath": "C:\\Users\\radch\\.nuget\\packages\\",
-        "outputPath": "E:\\IT project\\Repos\\obj\\",
+        "outputPath": "E:\\IT project\\IDRRep\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "E:\\Microsoft\\Xamarin\\NuGet\\"
@@ -30,6 +30,7 @@
         },
         "frameworks": {
           "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
             "projectReferences": {}
           }
         },
@@ -41,6 +42,7 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "dependencies": {
             "DotNetSeleniumExtras.WaitHelpers": {
               "target": "Package",
@@ -48,15 +50,15 @@
             },
             "MSTest.TestAdapter": {
               "target": "Package",
-              "version": "[2.1.0, )"
+              "version": "[2.1.2, )"
             },
             "MSTest.TestFramework": {
               "target": "Package",
-              "version": "[2.1.0, )"
+              "version": "[2.1.2, )"
             },
             "Microsoft.NET.Test.Sdk": {
               "target": "Package",
-              "version": "[16.5.0, )"
+              "version": "[16.8.3, )"
             },
             "Selenium.Support": {
               "target": "Package",
@@ -68,11 +70,13 @@
             },
             "Selenium.WebDriver.ChromeDriver": {
               "target": "Package",
-              "version": "[85.0.4183.8700, )"
+              "version": "[88.0.4324.9600, )"
             },
             "coverlet.collector": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
               "target": "Package",
-              "version": "[1.2.0, )"
+              "version": "[3.0.1, )"
             }
           },
           "imports": [
@@ -90,7 +94,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
         }
       }
     }
