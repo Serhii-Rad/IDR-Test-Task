@@ -14,10 +14,12 @@
         "outputPath": "E:\\IT project\\IDRRep\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "E:\\Microsoft\\Xamarin\\NuGet\\"
+          "E:\\Visual Studio\\NuGetPackages",
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
           "C:\\Users\\radch\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
@@ -50,33 +52,33 @@
             },
             "MSTest.TestAdapter": {
               "target": "Package",
-              "version": "[2.1.2, )"
+              "version": "[2.2.7, )"
             },
             "MSTest.TestFramework": {
               "target": "Package",
-              "version": "[2.1.2, )"
+              "version": "[2.2.7, )"
             },
             "Microsoft.NET.Test.Sdk": {
               "target": "Package",
-              "version": "[16.8.3, )"
+              "version": "[16.11.0, )"
             },
             "Selenium.Support": {
               "target": "Package",
-              "version": "[3.141.0, )"
+              "version": "[4.0.1, )"
             },
             "Selenium.WebDriver": {
               "target": "Package",
-              "version": "[3.141.0, )"
+              "version": "[4.0.1, )"
             },
             "Selenium.WebDriver.ChromeDriver": {
               "target": "Package",
-              "version": "[88.0.4324.9600, )"
+              "version": "[95.0.4638.1700, )"
             },
             "coverlet.collector": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[3.0.1, )"
+              "version": "[3.1.0, )"
             }
           },
           "imports": [
@@ -94,7 +96,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     }

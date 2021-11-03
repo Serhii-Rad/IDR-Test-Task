@@ -5,7 +5,9 @@ using OpenQA.Selenium.Support.UI;
 using System;
 using System.Linq;
 using OpenQA.Selenium.Support.Extensions;
+using OpenQA.Selenium.Interactions;
 using System.IO;
+using SeleniumExtras.WaitHelpers;
 
 namespace IDRTestTask
 {
@@ -15,14 +17,26 @@ namespace IDRTestTask
         public IWebDriver driver;
         public readonly string URL = "http://sfs.gov.ua/";
         public TestContext TestContext { get; set; }
+        private ChromeOptions options = new ChromeOptions();
+        
+
+        public Actions Action()
+        {
+            Actions action = new Actions(driver);
+            return action;
+        }
+
 
         [TestInitialize]
         public void SetUp()
         {
-            driver = new ChromeDriver();
+            //options.AddArguments("headless");
+            driver = new ChromeDriver(options);
             driver.Manage().Window.Maximize();
             driver.Navigate().GoToUrl(URL);
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
+
+            
         }
 
         public void WaitVisibilityOfElement(long timeToWait, By locator)
@@ -35,7 +49,7 @@ namespace IDRTestTask
         public void CleanUp()
         {
             var takeScreenshot = driver.TakeScreenshot();
-
+            var check = TestContext.CurrentTestOutcome;
             if (TestContext.CurrentTestOutcome != UnitTestOutcome.Passed)
             {
                 var filePathToScreenshot = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\Screenshot " + DateTime.Now.ToString().Replace(".", "_").Replace(":", "_") + ".png";
@@ -58,15 +72,14 @@ namespace IDRTestTask
         public void MainTestMethod(string value)
         {
             IWebElement searchField = driver.FindElement(By.XPath("//input[contains(@placeholder, 'Пошук')]"));
+            IWebElement submitSearchButton = driver.FindElement(By.XPath("//button[@type='submit']"));
+
             searchField.Click();
-
-            
-
             searchField.SendKeys(value);
+            //Action().SendKeys("");
 
             string urlBeforeSearch = driver.Url;
 
-            IWebElement submitSearchButton = driver.FindElement(By.XPath("//button[@type='submit']"));
             submitSearchButton.Click();
 
             if (value == null || value == "")

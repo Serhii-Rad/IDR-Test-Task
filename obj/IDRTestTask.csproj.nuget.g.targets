@@ -4,9 +4,9 @@
     <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
   </PropertyGroup>
   <ImportGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
-    <Import Project="$(NuGetPackageRoot)selenium.webdriver.chromedriver\88.0.4324.9600\build\Selenium.WebDriver.ChromeDriver.targets" Condition="Exists('$(NuGetPackageRoot)selenium.webdriver.chromedriver\88.0.4324.9600\build\Selenium.WebDriver.ChromeDriver.targets')" />
-    <Import Project="$(NuGetPackageRoot)microsoft.codecoverage\16.8.3\build\netstandard1.0\Microsoft.CodeCoverage.targets" Condition="Exists('$(NuGetPackageRoot)microsoft.codecoverage\16.8.3\build\netstandard1.0\Microsoft.CodeCoverage.targets')" />
-    <Import Project="$(NuGetPackageRoot)microsoft.net.test.sdk\16.8.3\build\netcoreapp2.1\Microsoft.NET.Test.Sdk.targets" Condition="Exists('$(NuGetPackageRoot)microsoft.net.test.sdk\16.8.3\build\netcoreapp2.1\Microsoft.NET.Test.Sdk.targets')" />
-    <Import Project="$(NuGetPackageRoot)coverlet.collector\3.0.1\build\netstandard1.0\coverlet.collector.targets" Condition="Exists('$(NuGetPackageRoot)coverlet.collector\3.0.1\build\netstandard1.0\coverlet.collector.targets')" />
+    <Import Project="$(NuGetPackageRoot)selenium.webdriver.chromedriver\95.0.4638.1700\build\Selenium.WebDriver.ChromeDriver.targets" Condition="Exists('$(NuGetPackageRoot)selenium.webdriver.chromedriver\95.0.4638.1700\build\Selenium.WebDriver.ChromeDriver.targets')" />
+    <Import Project="$(NuGetPackageRoot)microsoft.codecoverage\16.11.0\build\netstandard1.0\Microsoft.CodeCoverage.targets" Condition="Exists('$(NuGetPackageRoot)microsoft.codecoverage\16.11.0\build\netstandard1.0\Microsoft.CodeCoverage.targets')" />
+    <Import Project="$(NuGetPackageRoot)microsoft.net.test.sdk\16.11.0\build\netcoreapp2.1\Microsoft.NET.Test.Sdk.targets" Condition="Exists('$(NuGetPackageRoot)microsoft.net.test.sdk\16.11.0\build\netcoreapp2.1\Microsoft.NET.Test.Sdk.targets')" />
+    <Import Project="$(NuGetPackageRoot)coverlet.collector\3.1.0\build\netstandard1.0\coverlet.collector.targets" Condition="Exists('$(NuGetPackageRoot)coverlet.collector\3.1.0\build\netstandard1.0\coverlet.collector.targets')" />
   </ImportGroup>
 </Project>
